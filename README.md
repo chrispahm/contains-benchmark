@@ -1,4 +1,4 @@
-# Benchmark of various implementations of the geospatial `contains` function
+# Benchmarking various implementations of the geospatial `contains` function
 
 This simple benchmark tests whether a point is contained by the small scale [Natural Earth 1:110m](https://www.naturalearthdata.com/downloads/110m-physical-vectors/) land dataset for a set of 1000 random points (point-in-polygon test). The test is implemented in various languages (JS, Python, C, Rust) and libraries ([GEOS](https://libgeos.org/), [Turf.js](https://turfjs.org/), [geo](https://github.com/georust/geo)).
 
