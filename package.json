@@ -1,0 +1,17 @@
+{
+  "name": "contains-benchmark",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./benchmark.mjs",
+  "scripts": {
+    "benchmark": "make && bun ./benchmark.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christoph Pahmeyer",
+  "license": "MIT",
+  "devDependencies": {
+    "@turf/turf": "^6.5.0",
+    "cli-table3": "^0.6.3",
+    "geos-wasm": "^1.2.1"
+  }
+}
