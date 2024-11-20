@@ -2,6 +2,26 @@
 
 This simple benchmark tests whether a point is contained by the small scale [Natural Earth 1:110m](https://www.naturalearthdata.com/downloads/110m-physical-vectors/) land dataset for a set of 1000 random points (point-in-polygon test). The test is implemented in various languages (JS, Python, C, Rust) and libraries ([GEOS](https://libgeos.org/), [Turf.js](https://turfjs.org/), [geo](https://github.com/georust/geo)).
 
+## Update Nov 2024
+
+After discussing the results with the GEOS developers (https://github.com/libgeos/geos/issues/1024), the performance issue got included in a list of issues regarding the GEOS `Relate` algorithm (https://github.com/libgeos/geos/issues/1060).
+The GEOS devs reworked the underlying algorithm (see https://github.com/locationtech/jts/pull/1052), which is now substantially faster than before! Here are the updated results:
+
+| Implementation of<br>point-in-polygon test<br>(1000 points x 127 polys) | **Time<br>(ms, lower is better)** | Time last benchmark<br>(ms, lower is better) |
+|-------------------------------------------------------------------------|-----------------------------------|----------------------------------------------|
+| GEOS-WASM (JS)                                                          | **6**                             | 2074                                         |
+| Shapely (Python)                                                        | **1692**\*                          | 1814                                         |
+| GEOS (C-API)                                                            | **1**                             | 1784                                         |
+| Turf.js (JS)]                                                           | **21**                            | 29                                           |
+| geo (Rust)                                                              | **3**                             | 3                                            |
+
+\* Latest available Shapely build 2.1.0.dev0+140.gac708af includes GEOS 3.12.2 and therefore doesn't show the performance gains from https://github.com/locationtech/jts/pull/1052 yet.
+
+Benchmark was performed using GEOS 3.13.0 (C-API and JS-WASM), Turf.js v7.1.0 and geo v0.29.2 on a 14" MacBook Pro M1. Previous benchmark used GEOS 3.12.1, Turf.js v6.5.0 and geo 0.27.0 on the same machine.
+
+
+# Previous contents of the README
+
 ## Results
 
 | Implementation of<br>point-in-polygon test | Time (ms, lower is better)  |

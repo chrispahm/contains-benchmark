@@ -1,2 +1,2 @@
-shapely==2.0.2
 numpy==1.21.6
+shapely==2.1.0.dev0+140.gac708af

@@ -4,6 +4,8 @@ LDFLAGS="-L/opt/homebrew/lib"
 all:
   # 1. Copy all *.mjs and *.py files from the src directory to the out directory
   #    since they do not need to be compiled
+	mkdir -p out/
+
 	cp src/*.mjs out/ 
 	cp src/*.py out/ 
   
