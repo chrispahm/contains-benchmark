@@ -10,7 +10,7 @@
   "author": "Christoph Pahmeyer",
   "license": "MIT",
   "devDependencies": {
-    "@turf/turf": "^6.5.0",
+    "@turf/turf": "^7.1.0",
     "cli-table3": "^0.6.3",
     "geos-wasm": "^1.2.1"
   }

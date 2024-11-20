@@ -9,8 +9,8 @@ name = "contains"
 path = "src/contains.rs"
 
 [dependencies]
-arrow = "49.0.0"
-geo = "0.27.0"
-geo-types = "0.7.12"
+arrow = "53.2.0"
+geo = "0.29.2"
+geo-types = "0.7.14"
 geojson = "0.24.1"
 rand = "0.8.5"
